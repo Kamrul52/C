@@ -1,6 +1,8 @@
 #include<stdio.h>
+#include<string.h>
 
-int f_calls =0;
+
+int f_calls = 0;
 int fib(int n)
 {
     f_calls = f_calls + 1;
@@ -9,7 +11,7 @@ int fib(int n)
     {
         return 1;
     }
-    return fib(n-1) + fib(n - 2);
+    return (fib(n - 1) + fib(n - 2));
 }
 
 int main()
@@ -25,16 +27,21 @@ int main()
     }
     else if( n == 2)
     {
+        strcpy(s, "nd");
+
+    }
+
+     else if( n == 3)
+    {
         strcpy(s, "rd");
 
     }
-    else if( n == 3 || n > 3)
+    else if( n == 4 || n > 4)
     {
         strcpy(s, "th");
 
     }
-    printf("%d%s fibonacci number %d is %d\n", n, s, fib(n));
+    printf("%d%s fibonacci number is %d\n", n, s, fib(n));
 
-    printf("Number of functions calls: %d\n", f_calls);
     return 0;
 }
